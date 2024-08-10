@@ -12,3 +12,4 @@ clock = pygame.time.Clock()
 player_image = 'textures/player.png'
 
 background_image = pygame.transform.scale(pygame.image.load("textures/background.png"), (700, 500))
+bullets = pygame.sprite.Group()
