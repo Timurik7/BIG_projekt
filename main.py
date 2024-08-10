@@ -1,18 +1,18 @@
-from setings import *
+from objekts import *
+
+player = Player(player_image, 100, 100, 50, 50, 5)
 
 game = True
 
-
 while True:
-    for e in pygame.event.get():
-        if e.type == pygame.QUIT:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
             exit()
 
-
-
     if game:
-        ...
-
+        win.blit(background_image, (0, 0))
+        player.update()
+        player.draw()
 
     pygame.display.update()
-    clock.tick(fps)
+    clock.tick(FPS)
