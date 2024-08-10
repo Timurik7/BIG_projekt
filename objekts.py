@@ -52,3 +52,25 @@ class Player(GameSprite):
         ang = math.degrees(math.atan2(dy, dx))
 
         self.rotate(ang - 90)
+
+
+
+    def fire(self):
+        #fire_sound_play() Add sounds
+        pos = pygame.mouse.get_pos()
+        dx = pos[0] - self.rect.centerx
+        dy = self.rect.centery - pos[1]
+        ang = math.degrees(math.atan2(dy, dx))
+
+
+class Bullet(GameSprite):
+    def __init__(self, image, x, y, w, h, speed, angle):
+        super().__init__(image, x, y, w, h,speed)
+        self.angle = angle
+
+    def update(self):
+        self.hitbox.center = self.rect.center
+        self.rotate(math.degrees(-self.angle) - 90)
+        self.rect.x += math
+
+
