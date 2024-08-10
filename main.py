@@ -13,6 +13,8 @@ while True:
         win.blit(background_image, (0, 0))
         player.update()
         player.draw()
+        bullets.update()
+        bullets.draw(win)
 
     pygame.display.update()
     clock.tick(FPS)
